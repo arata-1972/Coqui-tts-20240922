@@ -1,7 +1,11 @@
 from typing import Dict
 
 #from TTS.tts.utils.text.taiwanese.phonemizer import chinese_text_to_phonemes, format_phonemized_text
-from TTS.tts.utils.text.taiwanese.phonemizer import chinese_text_to_phonemes
+#from TTS.tts.utils.text.taiwanese.phonemizer import chinese_text_to_phonemes
+#from TTS.tts.utils.text.taiwanese.phonemizer import chinese_text_to_phonemes, save_skip_list_to_excel
+from TTS.tts.utils.text.taiwanese.phonemizer import chinese_text_to_phonemes, save_skip_list_to_excel, skip_list
+
+
 from TTS.tts.utils.text.phonemizers.base import BasePhonemizer
 
 _DEF_ZH_PUNCS = "、.,[]()?!〽~『』「」【】"
@@ -54,8 +58,13 @@ class NAN_TW_Phonemizer(BasePhonemizer):
         return ph
     
     def _phonemize(self, text, separator):
-        return self.phonemize_nan_tw(text, separator)
-
+        result = self.phonemize_nan_tw(text, separator)
+        # すべての処理が終わった後に一度だけExcelに保存
+        if skip_list:
+            save_skip_list_to_excel()
+        #return self.phonemize_nan_tw(text, separator)
+        return result
+    
     @staticmethod
     def supported_languages() -> Dict:
         return {"nan-tw": "Taiwanese (Taiwan)"}
