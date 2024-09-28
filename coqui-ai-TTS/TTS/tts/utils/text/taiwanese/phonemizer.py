@@ -37,6 +37,7 @@ from urllib3.util.retry import Retry
 import re
 
 def _chinese_character_to_pinyin(text: str) -> list:
+    print(f'分かち書きがされてると思うんですけど: {text}')
     # APIのURL
     #api_url = "http://tts001.iptcloud.net:8804/display"
     api_url = "https://learn-language.tokyo/api/tailuo-tone"
@@ -92,11 +93,10 @@ def _chinese_pinyin_to_phoneme(pinyin: str) -> str:
 
 def chinese_text_to_phonemes(text: str, seperator: str = "|") -> str:
     
-    #tokenized_text = jieba.cut(text, HMM=False)
-    tokenized_text = list(jieba.cut(text, HMM=False))
-    #print(f'tokenized_text1- {tokenized_text}')
-    tokenized_text = " ".join(tokenized_text)
-    #print(f'tokenized_text2- {tokenized_text}')
+    #tokenized_text = list(jieba.cut(text, HMM=False))
+    #tokenized_text = " ".join(tokenized_text)
+#   jiebaの分かち書きをスキップ
+    tokenized_text = text
     pinyined_text: List[str] = _chinese_character_to_pinyin(tokenized_text)
     print(f'pinyined_text3- {pinyined_text}')
 

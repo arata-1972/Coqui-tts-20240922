@@ -26,8 +26,8 @@
     "mixed_precision": true,
     "precision": "fp16",
     "epochs": 1000,
-    "batch_size": 8,
-    "eval_batch_size": 4,
+    "batch_size": 4,
+    "eval_batch_size": 2,
     "grad_clip": [
         1000,
         1000
@@ -265,5 +265,5 @@
     "use_d_vector_file": false,
     "d_vector_file": null,
     "d_vector_dim": 0,
-    "github_branch": "* main"
+    "github_branch": "* master"
 }

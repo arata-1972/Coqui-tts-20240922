@@ -28,8 +28,10 @@ audio_config = VitsAudioConfig(
 config = VitsConfig(
     audio=audio_config,
     run_name="vits_ljspeech",
-    batch_size=8,
-    eval_batch_size=4,
+    #batch_size=8,
+    batch_size=4,
+    #eval_batch_size=4,
+    eval_batch_size=2,
     batch_group_size=5,
     num_loader_workers=8,
     num_eval_loader_workers=4,
@@ -142,4 +144,6 @@ trainer = Trainer(
     train_samples=train_samples,
     eval_samples=eval_samples,
 )
+
+
 trainer.fit()
