@@ -23,18 +23,18 @@
     "run_eval_steps": null,
     "distributed_backend": "nccl",
     "distributed_url": "tcp://localhost:54321",
-    "mixed_precision": true,
+    "mixed_precision": false,
     "precision": "fp16",
     "epochs": 1000,
     "batch_size": 4,
     "eval_batch_size": 2,
     "grad_clip": [
-        0.5,
-        0.5
+        0.1,
+        0.1
     ],
     "scheduler_after_epoch": true,
     "lr": 0.001,
-    "optimizer": "RAdam",
+    "optimizer": "AdamW",
     "optimizer_params": {
         "betas": [
             0.8,
@@ -232,8 +232,8 @@
         "reinit_DP": false,
         "reinit_text_encoder": false
     },
-    "lr_gen": 2.5e-05,
-    "lr_disc": 2.5e-05,
+    "lr_gen": 1e-05,
+    "lr_disc": 1e-05,
     "lr_scheduler_gen": "ExponentialLR",
     "lr_scheduler_gen_params": {
         "gamma": 0.999875,

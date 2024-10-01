@@ -45,16 +45,17 @@ config = VitsConfig(
     compute_input_seq_cache=True,
     print_step=25,
     print_eval=True,
-    mixed_precision=True,
+   # mixed_precision=True,
+    mixed_precision=False,  # 混合精度を無効化
     output_path=output_path,
     datasets=[dataset_config],
     cudnn_benchmark=False,
     #eval_split_size=100,
     eval_split_size = 0.15,
-    grad_clip=[0.5, 0.5], #勾配クリッピング
-    lr_gen=0.000025,  # ジェネレータの学習率
-    lr_disc=0.000025,  # ディスクリミネータの学習率
-    optimizer="RAdam"  # オプティマイザをRAdamに変更
+    grad_clip=[0.1, 0.1], #勾配クリッピング
+    lr_gen=0.00001,  # ジェネレータの学習率
+    lr_disc=0.00001,  # ディスクリミネータの学習率
+    optimizer="AdamW"  # オプティマイザをRAdamに変更
 
 
 )
