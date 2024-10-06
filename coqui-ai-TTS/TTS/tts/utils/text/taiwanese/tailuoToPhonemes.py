@@ -1,6 +1,5 @@
 PINYIN_DICT = {
     "a": ["ɑ"],
-    "ngoo": ["ŋo"], 
     "iann": ["iã"],
      "b": ["b"],
     "e": ["e"],
@@ -1780,10 +1779,6 @@ PINYIN_DICT = {
   "niau": ["niau"],
   "nih": ["niʔ"],
   "niu": ["niu"],
-  "nn̄g": ["n̄ŋ"],
-  "nǹg": ["nŋ"],
-  "n̄g": ["ŋ̄"],
-  "pa2–bue": ["pa-bue"],
   "pan": ["pan"],
   "pang": ["paŋ"],
   "peh": ["peʔ"],
@@ -1833,7 +1828,6 @@ PINYIN_DICT = {
   "sui": ["sui"],
   "sun": ["sun"],
   "sut": ["sut"],
-  "sǹg": ["sŋ"],
   "tan": ["tan"],
   "tang": ["taŋ"],
   "tauh": ["taʊʔ"],
@@ -1901,8 +1895,8 @@ PINYIN_DICT = {
   "tun": ["tun"],
   "tǹg": ["tŋ"],
   "uang": ["uaŋ"],
-  "ǹg": ["ŋ"],
-
+  "ng": ["ŋ"],
+  
 
 
     
